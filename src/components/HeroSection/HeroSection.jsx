@@ -3,19 +3,29 @@ import "swiper/css";
 import HeroImage from "../../assets/HeroImage/HeroImage.png";
 import { Box, Stack, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import styles from "./HeroSection.module.css"; // Import the CSS module
 
 const HeroSection = () => (
   <Swiper>
     <SwiperSlide>
-      <Stack direction="row" spacing={6} alignItems="center" pt={2}>
+      <Stack
+        direction="row"
+        spacing={6}
+        alignItems="center"
+        className={styles.heroContent}
+      >
         <Box>
-          <Typography variant="h3" component="h1">
+          <Typography
+            variant="h3"
+            component="h1"
+            sx={{ fontSize: "50px", fontWeight: "normal" }}
+          >
             Skip the travel! Find Online
           </Typography>
           <Typography variant="h1" component="h1" mb={1}>
-            Medical <span style={{ color: "#2AA7FF" }}>Centers</span>
+            Medical <span className={styles.blueText}>Centers</span>
           </Typography>
-          <Typography color="#5C6169" fontSize={20} mb={3}>
+          <Typography fontSize={20} mb={3}>
             Connect instantly with a 24x7 specialist or choose to video visit a
             particular doctor.
           </Typography>
@@ -25,7 +35,7 @@ const HeroSection = () => (
             </Button>
           </Link>
         </Box>
-        <img src={HeroImage} width="50%" />
+        <img src={HeroImage} className={styles.heroImage} />
       </Stack>
     </SwiperSlide>
   </Swiper>

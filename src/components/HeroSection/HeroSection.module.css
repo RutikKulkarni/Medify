@@ -1,0 +1,44 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroContent {
+  padding-top: 2rem;
+}
+
+.heroContent h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.heroContent h1 span {
+  color: #2aa7ff;
+}
+
+.heroContent p {
+  color: #5c6169;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.heroContent button {
+  background-color: #2aa7ff;
+  color: white;
+}
+
+.heroImage {
+  margin-left: 2rem;
+}

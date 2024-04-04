@@ -1,0 +1,32 @@
+.footerLink {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footerContainer {
+  width: 100%;
+  height: 370px;
+  padding: 40px 135px 30px 162px;
+  gap: 0px;
+  opacity: 0px;
+  margin: 0 auto;
+  background: rgba(27, 60, 116, 1);
+}
+
+.footerInner {
+  width: 1143px;
+  height: 354px;
+  top: 40px;
+  left: 162px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.footerText {
+  font-weight: 300;
+  color: #fff;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

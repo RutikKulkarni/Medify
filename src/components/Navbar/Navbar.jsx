@@ -15,13 +15,14 @@ const CustomNavbar = () => {
         </Typography>
       </Box>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" className={styles.gradientBackground} style={{width: '100%', textAlign: 'center'}}>
         <Stack
           direction="row"
           spacing={2}
           alignItems="center"
           justifyContent="space-between"
           py={2}
+          sx={{margin: '0 auto'}} // Centering the stack horizontally
         >
           <Link to="/">
             <img src={logo} alt="Logo" height={27} />
