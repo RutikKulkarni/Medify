@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Medify - Medical Center Slot Booking Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Medify, a React-based web application designed for booking medical appointments. This project aims to provide users with a seamless experience in finding medical centers across the USA and scheduling appointments. It includes features such as searching for medical centers by state and city, booking appointments, and viewing past bookings.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+- *Live URL:* [here](https://medify-one.vercel.app/). 
 
-### `npm start`
+## Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The objective of this assignment is to build a fully functional web application that facilitates the booking of medical appointments. Users should be able to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Navigate through the platform sections like Find Doctors, Hospitals, Medicines, and more via a top navigation bar.
+- Search for medical centers by selecting a state and city.
+- View available medical centers in the selected location and book appointments.
+- Use a detailed booking section with a calendar-like interface to choose appointment dates and time slots.
+- Access a personalized page displaying all user bookings.
 
-### `npm test`
+## Key Features to Implement
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Landing Page
 
-### `npm run build`
+- Top navigation bar with access to platform sections.
+- Search section for selecting a state and city.
+- Additional sections as provided in the Figma design.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Search Results Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Listings view showing available medical centers.
+- Option to book appointments.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Booking Interface
 
-### `npm run eject`
+- Detailed booking section for selecting a medical center.
+- Calendar-like interface for choosing appointment dates.
+- Ability to book appointments within a time frame.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### My Bookings Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Personalized page displaying all user bookings.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Responsive Design
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Ensure full responsiveness adhering to design standards presented in Figma screenshots.
 
-## Learn More
+## Figma Design
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Figma Link](https://www.figma.com/file/BLZw4DOia4hXyqt8X1Yuyl/Desktop-Designs-%3A-Healthcare-Consultation-(Community)?type=design&node-id=0-1&mode=design&t=VgPv59eyp8F6dTev-0)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Backend Endpoint
 
-### Code Splitting
+- **Base URL:** [https://meddata-backend.onrender.com](https://meddata-backend.onrender.com)
+- **Endpoints:**
+  - Get a list of all states: `/states`
+  - Get a list of all cities of a particular state: `/cities/:state`
+    Eg: `/cities/Alaska`
+  - Get a list of all medical centers based on a state and city: `/data?state=<state-name>&city=<city-name>`
+    Eg: `/data?state=Alaska&city=SOLDOTNA`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Sample JSON Response
+- *Request:* https://meddata-backend.onrender.com/data?state=Alaska&city=SOLDOTNA
+```
+{
+    Provider ID: "020024",
+    Hospital Name: "CENTRAL PENINSULA GENERAL HOSPITAL",
+    Address: "250 HOSPITAL PLACE",
+    City: "SOLDOTNA",
+    State: "Alaska",
+    ZIP Code: 99669,
+    County Name: "",
+    Phone Number: 9072624404,
+    Hospital Type: "Acute Care Hospitals",
+    Hospital Ownership: "Voluntary non-profit - Other",
+    Emergency Services: "Yes",
+    Meets criteria for meaningful use of EHRs: "Y",
+    Hospital overall rating: 3,
+    Hospital overall rating footnote: "",
+    Mortality national comparison: "Same as the national average",
+    Mortality national comparison footnote: "",
+    Safety of care national comparison: "Same as the national average",
+    Safety of care national comparison footnote: "",
+    Readmission national comparison: "Same as the national average",
+    Readmission national comparison footnote: "",
+    Patient experience national comparison: "Same as the national average",
+    Patient experience national comparison footnote: "",
+    Effectiveness of care national comparison: "Same as the national average",
+    Effectiveness of care national comparison footnote: "",
+    Timeliness of care national comparison: "Below the national average",
+    Timeliness of care national comparison footnote: "",
+    Efficient use of medical imaging national comparison: "Same as the national average",
+    Efficient use of medical imaging national comparison footnote: ""
+}
+```
