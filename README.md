@@ -1,4 +1,4 @@
-# Medify - Medical Center Slot Booking Platform
+# Medify
 
 Welcome to Medify, a React-based web application designed for booking medical appointments. This project aims to provide users with a seamless experience in finding medical centers across the USA and scheduling appointments. It includes features such as searching for medical centers by state and city, booking appointments, and viewing past bookings.
 
