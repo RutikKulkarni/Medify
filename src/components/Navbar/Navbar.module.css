@@ -1,0 +1,32 @@
+/* .navlinks a{
+    color:#102851;
+    text-decoration: none;
+} */
+
+
+.navlinks a{
+    color:#222b39;
+    margin-left: 20%;
+    gap: 30px;
+    text-decoration: none;
+  }
+  
+  .primary {
+    background-color: var(--color);
+  }
+  
+  .buttonPrimary {
+    background-color: var(--color);
+    border-radius: 8px;
+    height: 40px;
+    width: 130px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }

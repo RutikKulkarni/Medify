@@ -1,0 +1,7 @@
+.swiperslide {
+    width: calc(100% / 3 - 20px) !important;
+    overflow: hidden;
+}
+.swiperStyles{
+    padding: 0 50px;
+}

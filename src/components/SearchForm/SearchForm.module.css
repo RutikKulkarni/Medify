@@ -1,0 +1,5 @@
+.form {
+  display: flex;
+  gap: 45px;
+  justify-content: space-between;
+}
