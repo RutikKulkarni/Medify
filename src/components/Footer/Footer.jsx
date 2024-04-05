@@ -6,10 +6,10 @@ import facebook from "../../assets/FooterIcons/facebook.png";
 import pinterest from "../../assets/FooterIcons/pinterest.png";
 import twitter from "../../assets/FooterIcons/twitter.png";
 import youtube from "../../assets/FooterIcons/youtube.png";
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
 const FL = ({ children }) => (
-  <Link underline="none" className={styles.footerLink}>
+  <Link underline="none" className={styles.fl}>
     <Stack direction="row" gap={0.5}>
       <KeyboardArrowRightIcon />
       {children}
@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <Box className={styles.footerContainer}>
       <Container maxWidth="xl" className={styles.footerInner}>
-        <Grid container spacing={4} >
+        <Grid container spacing={4}>
           <Grid item xs={12} md={4.5}>
             <Stack
               alignItems="flex-start"
@@ -37,34 +37,33 @@ const Footer = () => {
               </Stack>
             </Stack>
           </Grid>
-
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL>About Us</FL>
-              <FL>Our Pricing</FL>
-              <FL>Our Gallery</FL>
-              <FL>Appointment</FL>
-              <FL>Privacy Policy</FL>
+              <FL className={styles.whiteText}>About Us</FL>
+              <FL className={styles.whiteText}>Our Pricing</FL>
+              <FL className={styles.whiteText}>Our Gallery</FL>
+              <FL className={styles.whiteText}>Appointment</FL>
+              <FL className={styles.whiteText}>Privacy Policy</FL>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL>Orthology</FL>
-              <FL>Neurology</FL>
-              <FL>Dental Care</FL>
-              <FL>Opthalmology</FL>
-              <FL>Cardiology</FL>
+              <FL className={styles.whiteText}>Orthology</FL>
+              <FL className={styles.whiteText}>Neurology</FL>
+              <FL className={styles.whiteText}>Dental Care</FL>
+              <FL className={styles.whiteText}>Opthalmology</FL>
+              <FL className={styles.whiteText}>Cardiology</FL>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL>About Us</FL>
-              <FL>Our Pricing</FL>
-              <FL>Our Gallery</FL>
-              <FL>Appointment</FL>
-              <FL>Privacy Policy</FL>
+              <FL className={styles.whiteText}>About Us</FL>
+              <FL className={styles.whiteText}>Our Pricing</FL>
+              <FL className={styles.whiteText}>Our Gallery</FL>
+              <FL className={styles.whiteText}>Appointment</FL>
+              <FL className={styles.whiteText}>Privacy Policy</FL>
             </Stack>
           </Grid>
         </Grid>

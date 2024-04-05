@@ -1,5 +1,5 @@
-.footerLink {
-  color: #fff;
+.fl {
+  color: var(--color-white);
   font-weight: 300;
   font-size: 14px;
   text-decoration: none;
