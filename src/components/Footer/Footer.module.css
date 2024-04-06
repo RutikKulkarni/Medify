@@ -19,7 +19,7 @@
 }
 
 .TextFooter {
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   display: flex;
   align-items: center;
