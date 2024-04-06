@@ -1,6 +1,7 @@
 import { Stack, TextField, Button } from "@mui/material";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import styles from "./Search.module.css";
 
 const Search = ({ list, filterList }) => {
   const [inputText, setInputText] = useState("");
@@ -21,7 +22,7 @@ const Search = ({ list, filterList }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.searchForm}>
       <Stack direction="row" spacing={2}>
         <TextField
           type="text"
@@ -36,7 +37,7 @@ const Search = ({ list, filterList }) => {
           variant="contained"
           size="large"
           startIcon={<SearchIcon />}
-          sx={{ py: "15px", px: 8, flexShrink: 0 }}
+          className={styles.searchButton}
           disableElevation
         >
           Search

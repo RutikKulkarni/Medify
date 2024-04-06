@@ -1,15 +1,19 @@
+import hospitalIcon from "../../assets/icons/hospitalicon.png";
 import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
-import { useState } from "react";
-import { format } from "date-fns";
-import hospitalIcon from "../../assets/icons/Hospital.png";
 import Like from "../../assets/icons/Like.png";
 import Selector from "../Selector/Selector";
+import { useState } from "react";
+import { format } from "date-fns";
+import styles from "./Card.module.css";
 
 const Card = ({ details, availableSlotes, handleBooking, booking = false }) => {
   const [showSelector, setShowSelector] = useState(false);
 
   return (
-    <Box sx={{ borderRadius: 2, bgcolor: "#fff", p: 4 }}>
+    <Box
+      className={styles.cardContainer}
+      sx={{ borderRadius: 2, bgcolor: "#fff", p: 4 }}
+    >
       <Stack direction="row" spacing={4}>
         <Box
           component="img"
@@ -54,7 +58,7 @@ const Card = ({ details, availableSlotes, handleBooking, booking = false }) => {
             >
               ₹500
             </Typography>
-            <Typography>Consultation fee at clinic</Typography>
+            <Typography>Consultation fee</Typography>
           </Stack>
           <Divider sx={{ borderStyle: "dashed", mb: 2 }} />
           <Stack
@@ -67,11 +71,11 @@ const Card = ({ details, availableSlotes, handleBooking, booking = false }) => {
             width="fit-content"
             spacing="4px"
           >
-            <img src={Like} width={20} height={20} />
+            <img src={Like} alt="like" width={20} height={20} />
             <Typography fontWeight={700} color="#fff" sx={{ opacity: 0.5 }}>
-              {details["Hospital overall rating"] == "Not Available"
+              {details["Hospital rating"] == "Not Available"
                 ? 0
-                : details["Hospital overall rating"]}
+                : details["Hospital rating"]}
             </Typography>
           </Stack>
         </Box>

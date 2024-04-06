@@ -1,0 +1,36 @@
+.banner {
+  position: relative;
+  background: linear-gradient(90deg, #2aa7ff, #0c8ce5);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.title {
+  color: #fff;
+}
+
+.searchBox {
+  width: 80%;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(50px);
+}
+
+.bookingsContainer {
+  padding-top: 64px;
+  padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .bookingsContainer {
+    padding-top: 128px;
+  }
+}
+
+.noBookings {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
