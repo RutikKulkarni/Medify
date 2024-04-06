@@ -1,0 +1,45 @@
+.container {
+  background-color: var(--color-section);
+  width: 100%;
+  padding-left: 0;
+}
+
+.header {
+  position: relative;
+  background: linear-gradient(90deg, #2aa7ff, #0c8ce5);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.mainContainer {
+  background: var(--color-white);
+  padding: 24px;
+  border-radius: 2px;
+  transform: translateY(50px);
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.infoBox {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.cityName {
+  text-transform: capitalize;
+}
+
+.tickIcon {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+}

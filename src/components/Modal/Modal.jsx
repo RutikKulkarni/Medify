@@ -69,7 +69,7 @@ const ModalComponent = ({
               onChange={(e) => setEmail(e.target.value)}
               className={styles.inputField}
             />
-            <Stack direction="row" spacing={2}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
               <Button
                 type="submit"
                 variant="contained"

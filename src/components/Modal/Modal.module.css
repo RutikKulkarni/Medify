@@ -1,5 +1,5 @@
 .modalContent {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   padding: 20px;
   background-color: #fff;
@@ -64,6 +64,7 @@
 @media (max-width: 600px) {
   .modalContent {
     padding: 10px;
+    width: 90%;
   }
 
   .heading {

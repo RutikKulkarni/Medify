@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Container, Stack, Box, Typography } from "@mui/material";
+import { Container, Stack, Box, Typography, Grid } from "@mui/material";
 import Card from "../../components/Card/Card";
 import Tick from "../../assets/icons/Tick.png";
 import Banner from "../../assets/icons/Banner.png";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import ModalComponent from "../../components/Modal/Modal";
 import Snackbar from "../../components/Snackbar/Snackbar";
+import styles from "./Search.module.css";
 
 const Search = () => {
   const [seachParams, setSearchParams] = useSearchParams();
@@ -15,9 +16,9 @@ const Search = () => {
   const [state, setState] = useState(seachParams.get("state"));
   const [city, setCity] = useState(seachParams.get("city"));
   const availableSlotes = {
-    morning: ["11:30 AM"],
-    afternoon: ["12:00 PM", "12:30 PM", "01:30 PM", "02:00 PM", "02:30 PM"],
-    evening: ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"],
+    morning: ["10:00 AM", "10:45 AM", "11:30 AM"],
+    afternoon: ["01:00 PM", "01:45 PM", "02:30 PM", "03:30 PM", "04:30 PM"],
+    evening: ["07:00 PM", "08:00 PM", "08:45 PM", "09:30 PM"],
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({});
@@ -51,46 +52,23 @@ const Search = () => {
   };
 
   return (
-    <Box
-      sx={{
-        background: "linear-gradient(#EFF5FE, rgba(241,247,255,0.47))",
-        width: "100%",
-        pl: 0,
-      }}
-    >
-      <Box
-        sx={{
-          position: "relative",
-          background: "linear-gradient(90deg, #2AA7FF, #0C8CE5)",
-          borderBottomLeftRadius: "1rem",
-          borderBottomRightRadius: "1rem",
-        }}
-      >
-        <Container
-          maxWidth="xl"
-          sx={{
-            background: "#fff",
-            p: 3,
-            borderRadius: 2,
-            transform: "translatey(50px)",
-            mb: "50px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-          }}
-        >
+    <Box className={styles.container}>
+      <Box className={styles.header}>
+        <Container maxWidth="xl" className={styles.mainContainer}>
           <SearchForm />
         </Container>
       </Box>
       <Container maxWidth="xl" sx={{ pt: 8, pb: 3 }}>
         {hospitals.length > 0 && (
-          <Box sx={{ mb: 3 }}>
-            <Typography component="h1" fontSize={24} fontWeight={500}>
+          <Box className={styles.infoBox}>
+            <Typography className={styles.title} component="h1">
               {`${hospitals.length} medical centers available in `}
-              <span style={{ textTransform: "capitalize" }}>
+              <span className={styles.cityName}>
                 {city.toLocaleLowerCase()}
               </span>
             </Typography>
             <Stack direction="row" spacing={2}>
-              <img src={Tick} height={24} width={24} />
+              <img src={Tick} className={styles.tickIcon} />
               <Typography color="#787887">
                 Book appointments with minimum wait-time & verified doctor
                 details
@@ -98,20 +76,24 @@ const Search = () => {
             </Stack>
           </Box>
         )}
-        <Stack alignItems="flex-start" direction={{ md: "row" }}>
-          <Stack spacing={3} width="calc(100% - 384px)" mr="24px">
-            {hospitals.length > 0 &&
-              hospitals.map((hospital) => (
-                <Card
-                  key={hospital["Hospital Name"]}
-                  details={hospital}
-                  availableSlotes={availableSlotes}
-                  handleBooking={handleModal}
-                />
-              ))}
-          </Stack>
-          <img src={Banner} width={360} height="auto" />
-        </Stack>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={9}>
+            <Stack spacing={3}>
+              {hospitals.length > 0 &&
+                hospitals.map((hospital) => (
+                  <Card
+                    key={hospital["Hospital Name"]}
+                    details={hospital}
+                    availableSlotes={availableSlotes}
+                    handleBooking={handleModal}
+                  />
+                ))}
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <img src={Banner} className={styles.bannerImage} alt="Banner" />
+          </Grid>
+        </Grid>
       </Container>
       <ModalComponent
         open={isModalOpen}

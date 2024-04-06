@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material';
-import './index.css';
-import App from './App';
-import Search from './pages/Search/Search';
-import Home from './pages/Home/Home';
-import MyBookings from './pages/MyBookings/MyBookings';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material";
+import "./index.css";
+import App from "./App";
+import Search from "./pages/Search/Search";
+import Home from "./pages/Home/Home";
+import MyBookings from "./pages/MyBookings/MyBookings";
 
+// Browser router configuration
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,41 +24,42 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Home />
-      }
-    ]
-  }
+        element: <Home />,
+      },
+    ],
+  },
 ]);
 
+// Theme configuration
 const theme = createTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
   },
   palette: {
     primary: {
-      main: '#2AA7FF',
-      green: '#00A500'
-    }
+      main: "#2AA7FF",
+      green: "#00A500",
+    },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '8px',
-          textTransform: 'none',
+          borderRadius: "8px",
+          textTransform: "none",
         },
         contained: {
           color: "#fff",
-        }
-      }
+        },
+      },
     },
     MuiContainer: {
       styleOverrides: {
         root: {
-          width: '90%',
-        }
-      }
-    }
+          width: "90%",
+        },
+      },
+    },
   },
   breakpoints: {
     values: {
@@ -65,12 +67,13 @@ const theme = createTheme({
       sm: 600,
       md: 900,
       lg: 1200,
-      xl: 1536
-    }
-  }
+      xl: 1536,
+    },
+  },
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Render the application
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

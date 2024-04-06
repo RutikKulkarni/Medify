@@ -39,25 +39,25 @@ const CustomNavbar = () => {
         <Container maxWidth="xl">
           <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>
             <List>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Find Doctors" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Hospitals" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Medicines" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Surgeries" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Software for Providers" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <ListItemText primary="Facilities" />
               </ListItem>
-              <ListItem button onClick={toggleMenu}>
+              <ListItem onClick={toggleMenu}>
                 <Link to="/MyBookings" className={styles.link}>
                   <Button variant="contained" className={styles.buttonPrimary}>
                     My Bookings
