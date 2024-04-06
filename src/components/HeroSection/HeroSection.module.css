@@ -10,21 +10,21 @@
 }
 
 .heroContent {
-  padding-top: 2rem;
+  padding: 2rem;
 }
 
 .heroContent h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  color: #2b2a2a;
+  margin-bottom: 1.5rem;
 }
 
 .heroContent h1 {
   font-size: 3rem;
-  font-weight: bold;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-.heroContent h1 span {
+.heroContent h1 .blueText {
   color: #2aa7ff;
 }
 
@@ -40,5 +40,18 @@
 }
 
 .heroImage {
-  margin-left: 2rem;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .heroContent h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 }

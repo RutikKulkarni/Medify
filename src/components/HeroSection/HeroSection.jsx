@@ -1,25 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import HeroImage from "../../assets/HeroImage/HeroImage.png";
 import { Box, Stack, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import styles from "./HeroSection.module.css"; // Import the CSS module
+import styles from "./HeroSection.module.css";
+import HeroImage from "../../assets/HeroImage/HeroImage.png";
 
 const HeroSection = () => (
   <Swiper>
     <SwiperSlide>
       <Stack
-        direction="row"
+        direction={{ xs: "column", md: "row" }}
         spacing={6}
         alignItems="center"
+        justifyContent="space-between"
         className={styles.heroContent}
       >
         <Box>
-          <Typography
-            variant="h3"
-            component="h1"
-            sx={{ fontSize: "50px", fontWeight: "normal" }}
-          >
+          <Typography variant="h3" style={{ marginBottom: "10px" }}>
             Skip the travel! Find Online
           </Typography>
           <Typography variant="h1" component="h1" mb={1}>
@@ -35,7 +32,7 @@ const HeroSection = () => (
             </Button>
           </Link>
         </Box>
-        <img src={HeroImage} className={styles.heroImage} />
+        <img src={HeroImage} alt="Hero" className={styles.heroImage}/>
       </Stack>
     </SwiperSlide>
   </Swiper>
