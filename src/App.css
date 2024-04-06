@@ -6,12 +6,9 @@ body {
 
 :root {
   --color: #2aa8ff;
+  --color-section: #e7f0ff;
   --color-white: #ffffff;
-  --gradient-background: linear-gradient(
-    81deg,
-    #e7f0ff 9.01%,
-    rgba(232, 241, 255, 0.47) 89.11%
-  );
+  --color-background: rgba(27, 60, 116, 1);
 }
 
 *,

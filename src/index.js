@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
-import './index.css'; // Import the global styles
+import './index.css';
 import App from './App';
 import Search from './pages/Search/Search';
 import Home from './pages/Home/Home';
