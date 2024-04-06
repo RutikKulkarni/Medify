@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Modal,
   Typography,
@@ -6,11 +7,17 @@ import {
   Button,
   Stack,
 } from "@mui/material";
-import { useState } from "react";
 import { format } from "date-fns";
+import styles from "./Modal.module.css";
 
-const Modall = ({ setOpen, open, bookingDetails, showSuccessMessage }) => {
+const ModalComponent = ({
+  setOpen,
+  open,
+  bookingDetails,
+  showSuccessMessage,
+}) => {
   const [email, setEmail] = useState("");
+
   const handleBooking = (e) => {
     e.preventDefault();
     const bookings = localStorage.getItem("bookings") || "[]";
@@ -38,36 +45,20 @@ const Modall = ({ setOpen, open, bookingDetails, showSuccessMessage }) => {
 
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
-      <Box
-        sx={{
-          width: 1,
-          maxWidth: 600,
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          boxShadow: 24,
-          p: 4,
-          outline: 0,
-          bgcolor: "#fff",
-          borderRadius: 2,
-        }}
-      >
-        <Typography component="h3" variant="h3">
-          Confirm booking
+      <Box className={styles.modalContent}>
+        <Typography component="h3" variant="h3" className={styles.heading}>
+          Confirm Booking
         </Typography>
-        <Typography fontSize={14} mb={3}>
-          <Box component="span">
-            Please enter your email to confirm booking for{" "}
-          </Box>
-          <Box component="span" fontWeight={600}>
+        <Typography fontSize={14} mb={3} className={styles.subText}>
+          <span>Please enter your email to confirm booking for </span>
+          <span className={styles.bookingDetails}>
             {`${bookingDetails.bookingTime} on ${formatDate(
               bookingDetails.bookingDate
             )}`}
-          </Box>
+          </span>
         </Typography>
         <form onSubmit={handleBooking}>
-          <Stack alignItems="flex-start" spacing={2}>
+          <Stack alignItems="center" spacing={3}>
             <TextField
               type="email"
               label="Enter your email"
@@ -76,13 +67,15 @@ const Modall = ({ setOpen, open, bookingDetails, showSuccessMessage }) => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className={styles.inputField}
             />
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={2}>
               <Button
                 type="submit"
                 variant="contained"
                 size="large"
                 disableElevation
+                className={styles.confirmButton}
               >
                 Confirm
               </Button>
@@ -91,6 +84,7 @@ const Modall = ({ setOpen, open, bookingDetails, showSuccessMessage }) => {
                 size="large"
                 disableElevation
                 onClick={() => setOpen(false)}
+                className={styles.cancelButton}
               >
                 Cancel
               </Button>
@@ -102,4 +96,4 @@ const Modall = ({ setOpen, open, bookingDetails, showSuccessMessage }) => {
   );
 };
 
-export default Modall;
+export default ModalComponent;

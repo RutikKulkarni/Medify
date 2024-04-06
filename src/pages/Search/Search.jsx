@@ -6,7 +6,7 @@ import Card from "../../components/Card/Card";
 import Tick from "../../assets/icons/Tick.png";
 import Banner from "../../assets/icons/Banner.png";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import Modall from "../../components/Modal/Modal";
+import ModalComponent from "../../components/Modal/Modal";
 import Snackbar from "../../components/Snackbar/Snackbar";
 
 const Search = () => {
@@ -113,7 +113,7 @@ const Search = () => {
           <img src={Banner} width={360} height="auto" />
         </Stack>
       </Container>
-      <Modall
+      <ModalComponent
         open={isModalOpen}
         setOpen={setIsModalOpen}
         bookingDetails={bookingDetails}
