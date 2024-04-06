@@ -8,8 +8,8 @@ import twitter from "../../assets/FooterIcons/twitter.png";
 import youtube from "../../assets/FooterIcons/youtube.png";
 import styles from "./Footer.module.css";
 
-const FL = ({ children }) => (
-  <Link underline="none" className={styles.fl}>
+const TextFooter = ({ children }) => (
+  <Link underline="none" className={styles.TextFooter}>
     <Stack direction="row" gap={0.5}>
       <KeyboardArrowRightIcon />
       {children}
@@ -28,42 +28,51 @@ const Footer = () => {
               justifyContent="space-between"
               height={1}
             >
-              <Box src={logo} height={36} alt="Medify" component="img" mb={2} />
+              <img
+                src={logo}
+                height={36}
+                alt="Medify"
+                className={styles.logo}
+              />
               <Stack direction="row" spacing={1.5}>
-                <Box component="img" src={facebook} height={36} />
-                <Box component="img" src={twitter} height={36} />
-                <Box component="img" src={youtube} height={36} />
-                <Box component="img" src={pinterest} height={36} />
+                <img src={facebook} height={36} className={styles.socialIcon} />
+                <img src={twitter} height={36} className={styles.socialIcon} />
+                <img src={youtube} height={36} className={styles.socialIcon} />
+                <img
+                  src={pinterest}
+                  height={36}
+                  className={styles.socialIcon}
+                />
               </Stack>
             </Stack>
           </Grid>
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL className={styles.whiteText}>About Us</FL>
-              <FL className={styles.whiteText}>Our Pricing</FL>
-              <FL className={styles.whiteText}>Our Gallery</FL>
-              <FL className={styles.whiteText}>Appointment</FL>
-              <FL className={styles.whiteText}>Privacy Policy</FL>
+              <TextFooter>About Us</TextFooter>
+              <TextFooter>Our Pricing</TextFooter>
+              <TextFooter>Our Gallery</TextFooter>
+              <TextFooter>Appointment</TextFooter>
+              <TextFooter>Privacy Policy</TextFooter>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL className={styles.whiteText}>Orthology</FL>
-              <FL className={styles.whiteText}>Neurology</FL>
-              <FL className={styles.whiteText}>Dental Care</FL>
-              <FL className={styles.whiteText}>Opthalmology</FL>
-              <FL className={styles.whiteText}>Cardiology</FL>
+              <TextFooter>Orthology</TextFooter>
+              <TextFooter>Neurology</TextFooter>
+              <TextFooter>Dental Care</TextFooter>
+              <TextFooter>Opthalmology</TextFooter>
+              <TextFooter>Cardiology</TextFooter>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <FL className={styles.whiteText}>About Us</FL>
-              <FL className={styles.whiteText}>Our Pricing</FL>
-              <FL className={styles.whiteText}>Our Gallery</FL>
-              <FL className={styles.whiteText}>Appointment</FL>
-              <FL className={styles.whiteText}>Privacy Policy</FL>
+              <TextFooter>About Us</TextFooter>
+              <TextFooter>Our Pricing</TextFooter>
+              <TextFooter>Our Gallery</TextFooter>
+              <TextFooter>Appointment</TextFooter>
+              <TextFooter>Privacy Policy</TextFooter>
             </Stack>
           </Grid>
         </Grid>
