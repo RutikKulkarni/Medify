@@ -1,9 +1,9 @@
 import { MenuItem, Select, Button, InputAdornment } from "@mui/material";
 import { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import styles from "./SearchForm.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styles from "./SearchForm.module.css";
 
 const SearchForm = () => {
   const [states, setStates] = useState([]);
@@ -13,48 +13,46 @@ const SearchForm = () => {
     city: "",
   });
   const navigate = useNavigate();
+
   const handleChange = (e) => {
-    const name = e.target.name;
-    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.state !== "" && formData.city !== "") {
+    if (formData.state && formData.city) {
       navigate(`/search?state=${formData.state}&city=${formData.city}`);
     }
   };
 
   useEffect(() => {
-    const getStates = async () => {
+    const fetchStates = async () => {
       try {
-        const data = await axios.get(
+        const { data } = await axios.get(
           "https://meddata-backend.onrender.com/states"
         );
-        setStates(data.data);
-      } catch (err) {
-        console.log(err);
+        setStates(data);
+      } catch (error) {
+        console.error("Error fetching states:", error);
       }
     };
-    getStates();
+    fetchStates();
   }, []);
 
   useEffect(() => {
-    const getCities = async () => {
-      setCities([]);
-      setFormData((prev) => ({ ...prev, city: "" }));
+    const fetchCities = async () => {
+      if (!formData.state) return;
       try {
-        const data = await axios.get(
+        const { data } = await axios.get(
           `https://meddata-backend.onrender.com/cities/${formData.state}`
         );
-        setCities(data.data);
-      } catch (err) {
-        console.log(err);
+        setCities(data);
+      } catch (error) {
+        console.error("Error fetching cities:", error);
       }
     };
-    if (formData.state !== "") {
-      getCities();
-    }
+    fetchCities();
   }, [formData.state]);
 
   return (
@@ -71,17 +69,16 @@ const SearchForm = () => {
           </InputAdornment>
         }
         required
-        sx={{ minWidth: 300, width: "100%" }}
+        className={`${styles.selectContainer} ${styles.selectWithBorder}`}
       >
-        <MenuItem disabled value="" selected>
-          State
+        <MenuItem disabled value="">
+          Select State
         </MenuItem>
-        {states.length > 0 &&
-          states.map((state) => (
-            <MenuItem key={state} value={state}>
-              {state}
-            </MenuItem>
-          ))}
+        {states.map((state) => (
+          <MenuItem key={state} value={state}>
+            {state}
+          </MenuItem>
+        ))}
       </Select>
 
       <Select
@@ -96,17 +93,16 @@ const SearchForm = () => {
           </InputAdornment>
         }
         required
-        sx={{ minWidth: 300, width: "100%" }}
+        className={`${styles.selectContainer} ${styles.selectWithBorder}`}
       >
-        <MenuItem disabled value="" selected>
-          City
+        <MenuItem disabled value="">
+          Select City
         </MenuItem>
-        {cities.length > 0 &&
-          cities.map((city) => (
-            <MenuItem key={city} value={city}>
-              {city}
-            </MenuItem>
-          ))}
+        {cities.map((city) => (
+          <MenuItem key={city} value={city}>
+            {city}
+          </MenuItem>
+        ))}
       </Select>
 
       <Button

@@ -1,7 +1,7 @@
 import { Box, Typography, Container, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
-import Banner from "../../assets/icons/Banner.png";
+import BannerImage from "../../assets/icons/Banner.png";
 import Search from "../../components/Search/Search";
 
 const MyBookings = () => {
@@ -9,8 +9,8 @@ const MyBookings = () => {
   const [filteredBookings, setFilteredBookings] = useState([]);
 
   useEffect(() => {
-    const localBookings = localStorage.getItem("bookings") || "[]";
-    setBookings(JSON.parse(localBookings));
+    const storedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    setBookings(storedBookings);
   }, []);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const MyBookings = () => {
               flexGrow={1}
               borderRadius={2}
               boxShadow="0 0 10px rgba(0,0,0,0.1)"
-              sx={{ translate: "0 50px" }}
+              sx={{ transform: "translateY(50px)" }}
             >
               <Search list={bookings} filterList={setFilteredBookings} />
             </Box>
@@ -58,24 +58,22 @@ const MyBookings = () => {
 
       <Container maxWidth="xl" sx={{ pt: 8, pb: 3 }}>
         <Stack alignItems="flex-start" direction={{ md: "row" }}>
-          <Stack spacing={3} width="calc(100% - 384px)" mr="24px">
-            {filteredBookings.length > 0 &&
-              filteredBookings.map((hospital) => (
+          <Stack spacing={3} width="calc(100% - 384px)" mr={24}>
+            {filteredBookings.length > 0 ? (
+              filteredBookings.map((booking) => (
                 <Card
-                  key={hospital["Hospital Name"]}
-                  details={hospital}
+                  key={booking["Hospital Name"]}
+                  details={booking}
                   booking={true}
                 />
-              ))}
-
-            {filteredBookings.length === 0 && (
+              ))
+            ) : (
               <Typography variant="h3" bgcolor="#fff" p={3} borderRadius={2}>
                 No Bookings Found!
               </Typography>
             )}
           </Stack>
-
-          <img src={Banner} width={360} height="auto" />
+          <img src={BannerImage} alt="Banner" width={360} height="auto" />
         </Stack>
       </Container>
     </Box>
