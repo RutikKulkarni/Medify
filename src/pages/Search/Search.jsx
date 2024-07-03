@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import HospitalCard from "../../components/HospitalCard/HospitalCard";
-import icon from "../../assets/Icons/tick.png";
+import icon from "../../assets/images/tick.png";
 import cta from "../../assets/images/cta.png";
 import HospitalSearch from "../../components/HospitalSearchForm/Search";
 import BookingModal from "../../components/BookingModal/BookingModal";
