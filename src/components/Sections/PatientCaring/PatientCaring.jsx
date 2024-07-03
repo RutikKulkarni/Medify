@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import banner from "../../../assets/images/patientcaring.png";
-import tick from "../../../assets/icons/tick-blue.png";
+import tick from "../../../assets/tick-blue.png";
 
 function PatientCaring() {
   return (

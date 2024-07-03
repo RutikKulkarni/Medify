@@ -1,12 +1,12 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import IconCard from "../../IconCard/IconCard";
-import icon1 from "../../../assets/icons/Drugstore.png";
-import icon2 from "../../../assets/icons/primary-care.png";
-import icon3 from "../../../assets/icons/cardiology.png";
-import icon4 from "../../../assets/icons/mri.png";
-import icon5 from "../../../assets/icons/blood-test.png";
-import icon6 from "../../../assets/icons/piscologist.png";
-import icon7 from "../../../assets/icons/X-Ray.png";
+import icon1 from "../../../assets/Drugstore.png";
+import icon2 from "../../../assets/primary-care.png";
+import icon3 from "../../../assets/cardiology.png";
+import icon4 from "../../../assets/mri.png";
+import icon5 from "../../../assets/blood-test.png";
+import icon6 from "../../../assets/piscologist.png";
+import icon7 from "../../../assets/X-Ray.png";
 
 function Specialization() {
   const data = [

@@ -1,9 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
-import icon1 from "../../../assets/icons/Doctor.png";
-import icon2 from "../../../assets/icons/Drugstore.png";
-import icon3 from "../../../assets/icons/Hospital.png";
-import icon4 from "../../../assets/icons/Capsule.png";
-import icon5 from "../../../assets/icons/Ambulance.png";
+import icon1 from "../../../assets/Doctor.png";
+import icon2 from "../../../assets/Drugstore.png";
+import icon3 from "../../../assets/Hospital.png";
+import icon4 from "../../../assets/Capsule.png";
+import icon5 from "../../../assets/Ambulance.png";
 import IconCard from "../../IconCard/IconCard";
 
 function HeroUSPs() {
