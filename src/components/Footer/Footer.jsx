@@ -1,26 +1,23 @@
-import React from "react";
-import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
 import logo from "../../assets/logo/logo.png";
-import facebook from "../../assets/FooterIcons/facebook.png";
+import fb from "../../assets/FooterIcons/fb.png";
 import pinterest from "../../assets/FooterIcons/pinterest.png";
 import twitter from "../../assets/FooterIcons/twitter.png";
-import youtube from "../../assets/FooterIcons/youtube.png";
-import styles from "./Footer.module.css";
+import yt from "../../assets/FooterIcons/yt.png";
+import FooterLink from "./FooterLink";
 
-const TextFooter = ({ children }) => (
-  <Link underline="none" className={styles.TextFooter}>
-    <Stack direction="row" gap={0.5}>
-      <KeyboardArrowRightIcon />
-      {children}
-    </Stack>
-  </Link>
-);
-
-const Footer = () => {
+function Footer() {
   return (
-    <Box className={styles.footerContainer}>
-      <Container maxWidth="xl" className={styles.footerInner}>
+    <Box bgcolor="primary.secondary" pb={3} pt={6}>
+      <Container maxWidth="xl">
         <Grid container spacing={4}>
           <Grid item xs={12} md={4.5}>
             <Stack
@@ -28,51 +25,43 @@ const Footer = () => {
               justifyContent="space-between"
               height={1}
             >
-              <img
-                src={logo}
-                height={36}
-                alt="Medify"
-                className={styles.logo}
-              />
+              <Box src={logo} height={36} alt="Medify" component="img" mb={2} />
               <Stack direction="row" spacing={1.5}>
-                <img src={facebook} height={36} className={styles.socialIcon} />
-                <img src={twitter} height={36} className={styles.socialIcon} />
-                <img src={youtube} height={36} className={styles.socialIcon} />
-                <img
-                  src={pinterest}
-                  height={36}
-                  className={styles.socialIcon}
-                />
+                <Box component="img" src={fb} height={36} />
+                <Box component="img" src={twitter} height={36} />
+                <Box component="img" src={yt} height={36} />
+                <Box component="img" src={pinterest} height={36} />
               </Stack>
             </Stack>
           </Grid>
+
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <TextFooter>About Us</TextFooter>
-              <TextFooter>Our Pricing</TextFooter>
-              <TextFooter>Our Gallery</TextFooter>
-              <TextFooter>Appointment</TextFooter>
-              <TextFooter>Privacy Policy</TextFooter>
+              <FooterLink>About Us</FooterLink>
+              <FooterLink>Our Pricing</FooterLink>
+              <FooterLink>Our Gallery</FooterLink>
+              <FooterLink>Appointment</FooterLink>
+              <FooterLink>Privacy Policy</FooterLink>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <TextFooter>Orthology</TextFooter>
-              <TextFooter>Neurology</TextFooter>
-              <TextFooter>Dental Care</TextFooter>
-              <TextFooter>Opthalmology</TextFooter>
-              <TextFooter>Cardiology</TextFooter>
+              <FooterLink>Orthology</FooterLink>
+              <FooterLink>Neurology</FooterLink>
+              <FooterLink>Dental Care</FooterLink>
+              <FooterLink>Opthalmology</FooterLink>
+              <FooterLink>Cardiology</FooterLink>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={2.5}>
             <Stack spacing={2}>
-              <TextFooter>About Us</TextFooter>
-              <TextFooter>Our Pricing</TextFooter>
-              <TextFooter>Our Gallery</TextFooter>
-              <TextFooter>Appointment</TextFooter>
-              <TextFooter>Privacy Policy</TextFooter>
+              <FooterLink>About Us</FooterLink>
+              <FooterLink>Our Pricing</FooterLink>
+              <FooterLink>Our Gallery</FooterLink>
+              <FooterLink>Appointment</FooterLink>
+              <FooterLink>Privacy Policy</FooterLink>
             </Stack>
           </Grid>
         </Grid>
@@ -84,13 +73,12 @@ const Footer = () => {
           pt={3}
           mt={5}
           borderTop="1px solid rgba(255,255,255,0.1)"
-          className={styles.footerText}
         >
           Copyright ©2023 Surya Nursing Home.com. All Rights Reserved
         </Typography>
       </Container>
     </Box>
   );
-};
+}
 
 export default Footer;
